@@ -1,0 +1,9 @@
+Name: classcrypt
+Version: VAR_VERSION
+Date: 2019-04-01
+Author: Singon
+Maintainer: Singon
+Title: Classical cryptography
+Description: Encryption and decryption tools for classical ciphers
+Categories: cryptography
+License: To be added
