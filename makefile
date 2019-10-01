@@ -8,7 +8,7 @@ SOURCES := $(shell find src -type f)
 FILES_OCTAVE := $(patsubst src/octave/%,${DIST_TMPDIR}/inst/%,$(shell find src/octave -type f))
 FILES_META   := $(patsubst src/meta/%,${DIST_TMPDIR}/%,$(shell find src/meta -type f))
 
-.PHONY: dist clean
+.PHONY: dist clean uninstall
 
 dist: build/${DIST_NAME}
 
@@ -35,4 +35,8 @@ clean:
 install: build/${DIST_NAME}
 	@echo "Installing Octave package locally..."
 	cd build && octave-cli --silent --eval 'pkg install "${DIST_NAME}"'
+
+uninstall:
+	@echo "Uninstalling local Octave package..."
+	octave-cli --silent --eval 'pkg uninstall ${NAME}'
 
