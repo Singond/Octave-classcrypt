@@ -1,4 +1,8 @@
 function num = str2idx(str)
 	ab = classcrypt_settings.alphabet;
-	num = lookup(ab, str);
+	if (length(ab) <= 127)
+		num = int8(lookup(ab, str));
+	else
+		num = lookup(ab, str);
+	endif
 endfunction
