@@ -1,4 +1,6 @@
-function str = idx2str(nums)
-	ab = classcrypt_settings.alphabet;
-	str = ab(mod(nums-1, length(ab))+1);
+function str = idx2str(nums, alphabet)
+	if (nargin < 2)
+		alphabet = classcrypt_settings.alphabet;
+	endif
+	str = alphabet(mod(nums-1, length(alphabet))+1);
 endfunction
